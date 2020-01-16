@@ -7,17 +7,55 @@
 
     </head>
     <body>
-
+        <title>Code merge experiment</title>
         <div id="content">
         <p>RC - Hello World!</p>
         <p>first line of changes</p>
         </div>
-
+        
         <p>GF - Hello World!</p>
         <p>I have my dev-gf branch!</p>
+
+        <div id="radios">
+        <input type="radio" name="first" value="first">Primo<br>
+        <input type="radio" name="second" value="second">Secondo<br>
+        <input type="radio" name="third" value="third">Terzo<br>
+        </div>
+
+        <div id="boxes">
+        <input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
+        <input type="checkbox" name="vehicle2" value="Car"> I have a car<br>
+        <input type="checkbox" name="vehicle3" value="Boat" checked> I have a boat<br>
+        </div>
+    
+
+        <table style="width:100%" id="standing">
+            <tr>
+              <th>Team</th>
+              <th>Points</th>
+              <th>Position</th>
+            </tr>
+            <tr style="color: black">
+              <td>Juventus</td>
+              <td>48</td>
+              <td>1</td>
+            </tr>
+            <tr style="color: blue">
+              <td>Inter</td>
+              <td>46</td>
+              <td>2</td>
+            </tr>
+            <tr style="color: lightblue">
+                <td>Lazio</td>
+                <td>42</td>
+                <td>3</td>
+              </tr>
+          </table>
+
         <div id="gfapp">
             {{ gfmessage }}
           </div>
     <script src="index.js"></script>
+
     </body>
 </html>
