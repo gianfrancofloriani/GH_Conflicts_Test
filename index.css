@@ -1,4 +1,4 @@
-content {
+.content {
     height: 200px;
     color: greenyellow;
 }
@@ -8,3 +8,17 @@ p {
     color: red;
   } 
 
+title {
+    height: 400px;
+    color: orange;
+}
+
+.radios {
+    color: purple;
+    height: 40px;
+}
+
+.boxes {
+    color: blue;
+    height: 40px;
+}
