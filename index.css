@@ -2,3 +2,9 @@ content {
     height: 200px;
     color: greenyellow;
 }
+
+p {
+    text-align: center;
+    color: red;
+  } 
+
