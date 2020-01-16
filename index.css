@@ -8,6 +8,12 @@ p {
     color: red;
   } 
 
+
+  #gfapp {
+    text-align: left;
+    color: blue;    
+  }
+
 title {
     height: 400px;
     color: orange;
@@ -28,3 +34,4 @@ title {
     color: black;
     
 }
+
