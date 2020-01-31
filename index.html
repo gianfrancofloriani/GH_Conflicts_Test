@@ -6,61 +6,51 @@
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
     </head>
-    <body>
-        <title>Code merge experiment</title>
-        <div id="content">
-        <p>RC - Hello World!</p>
-        <p>first line of changes</p>
-        </div>
+   <body onload="classifica()">
+        <title>Raul's first site</title>
+        <p>Raul Cangemi practise page</p>
+         
+      <input type='image' class='arrow' src='up_button.png' alt='Hide table' onclick='hideshow(false)' border='0'/>
         
-        <p>GF - Hello World!</p>
-        <p>I have my dev-gf branch!</p>
-
-        <div id="radios">
-        <input type="radio" name="first" value="first">Primo<br>
-        <input type="radio" name="second" value="second">Secondo<br>
-        <input type="radio" name="third" value="third">Terzo<br>
-        </div>
-
-        <div id="boxes">
-        <input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
-        <input type="checkbox" name="vehicle2" value="Car"> I have a car<br>
-        <input type="checkbox" name="vehicle3" value="Boat" checked> I have a boat<br>
-        </div>
-    
-
-        <table style="width:100%" id="standing">
-            <tr>
-              <th>Team</th>
-              <th>Points</th>
-              <th>Position</th>
-            </tr>
-            <tr style="color: black">
-              <td>Juventus</td>
-              <td>48</td>
-              <td>1</td>
-            </tr>
-            <tr style="color: blue">
-              <td>Inter</td>
-              <td>46</td>
-              <td>2</td>
-            </tr>
-            <tr style="color: lightblue">
-                <td>Lazio</td>
-                <td>42</td>
-                <td>3</td>
-              </tr>
+        <table id='standing'style="width:99%"  >
+                <tr>
+                    <th>Team</th>
+                    <th>Points</th>
+                    <th>Position</th>
+                </tr >
           </table>
+       
 
-        <div id="gfapp">
-            {{ gfmessage }}
-            <br>
-            <span v-bind:title="gfmessage2">
-                Hover your mouse over me for a few seconds
-                to see my dynamically bound title!
-            </span>
-          </div>
-    <script src="index.js"></script>
+              <div class="scatola">
+                <div class="radios">
+                  <input type="radio" name="chose" value="first">Primo<br>
+                  <input type="radio" name="chose" value="second">Secondo<br>
+                  <input type="radio" name="chose" value="third">Terzo<br>
+                </div>
+                <div class="boxes">
+                  <input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
+                  <input type="checkbox" name="vehicle2" value="Car"> I have a car<br>
+                  <input type="checkbox" name="vehicle3" value="Boat"> I have a boat<br>
+                </div>
+              </div>
+                          <div class="centro">
+                          <iframe src="https://www.tuttoandroid.net/" class="tuttoandroid">
+                            <p>Your browser does not support iframes.</p>
+                          </iframe>
 
-    </body>
+                          <form action="index.html" class="maschera" id="anagrafica">
+                            <p>Nome</p>
+                            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                            <p>Cognome</p>
+                            <input type="text" id="lname" name="lastname" placeholder="Your surname..">
+                            <p>Età</p>
+                            <input type="number" id="age" name="old" placeholder="Your age..">
+                            <input type="submit" id="simulazione" value="invia" class="manda">
+                          </form>
+                          
+                          <input type="button"  value= "Schiscia chi" class="butun" onclick="window.location.href='https://www.comune.milano.it/'" />
+                      
+                          <script src="index.js"></script>
+                            </div>
+  </body>
 </html>
