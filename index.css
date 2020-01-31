@@ -1,7 +1,15 @@
+body{
+    visibility: hidden;
+}
+.showbody{
+    visibility: visible;
+}
 table{
     border-collapse: collapse;
 }
-
+.tr-hidden{
+    display: none;
+}
  table, th, tr, td{
     border: 1px solid black;
     text-align: left;
@@ -17,12 +25,37 @@ td{
     left: 200px;
 }
 .scatola{ 
+    visibility: visible;
+    position: absolute;
+    top: 10%;
+    left: 33%;
+    width: 500px;
+    height: 300px;
+    background-color: #13273c;
+}
+.scatola_chiusa{
+    visibility: hidden;
+}
+.maschera{
     position: relative;
-    top: 150px;
-    width: 99%;
-    height: auto;
-    font-style: italic;
-    background-color: black;
+    top: 2.5%;
+    left: 5% ; 
+    width: 90%;
+    height: 90%;
+    padding: 10px 10px;
+    margin: 8px 0;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align-last: left;
+    
+  }
+  .manda{
+    background-color: #FFD200;
+    color: white;
 }
 .radios {
     color: purple;
@@ -33,62 +66,17 @@ td{
     color: rgb(29, 187, 50);
     height: auto;
 }
-
-.scatola:hover {
-    background-color:cyan;
-}
 .centro{
-    width: 99%;
-    top: 250px;
-    height: auto;
+    width: 33%;
+    height: 500px;
+    top: 50%;
+    position: absolute;
+    background-color: #1a3151;
+}
+.specchiettosito{
     position: relative;
-    background-color: lightgrey;
-}
-.butun{
-        position: relative;
-        right: -30px;
-        bottom: 95px;
-        background-color: #0E1D99;
-        border: none;
-        color: white;
-        padding: 25px 35px;
-        text-align: center;
-        font-size: 20px;
-        cursor: progress;
-        width: 30%;
-        height: 130px;
-}
-.butun:hover {
-    background-color:#01A0F3;
-  }
-
-.maschera{
-  position: relative;   
-  left: 20px;
-  width: 32%;
-  height: 250px;
-  padding: 12px 12px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  text-align-last: left;
-}
-p{
-    color:black;
-    text-align: left;
-}
-.manda{
-    background-color: #4CAF50;
-    color: white;
-}
-.tuttoandroid{
-    position: relative;
-    top: 10px;
-    bottom: 10px;
-    right: 10px;
-    left: 10px;
-    width: 32%;
-    height: 200px;
+    top: 5%;
+    left: 4%;
+    width: 90%;
+    height: 90%;
 }
