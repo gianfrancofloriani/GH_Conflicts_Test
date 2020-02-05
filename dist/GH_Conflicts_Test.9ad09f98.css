@@ -1,0 +1,120 @@
+body{
+    visibility: hidden;
+}
+.showbody{
+    visibility: visible;
+}
+table{
+    border-collapse: collapse;
+}
+.tr-hidden{
+    display: none;
+}
+ table, th, tr, td{
+    border: 1px solid black;
+    text-align: left;
+}
+td{
+    text-align: center;
+}
+.arrow{
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 20px;
+    left: 200px;
+}
+.scatola{ 
+    visibility: visible;
+    position: fixed;
+    top: 10%;
+    left: 33%;
+    width: 500px;
+    height: 300px;
+    background-color: #13273c;
+}
+.scatola_chiusa{
+    visibility: hidden;
+}
+.maschera{
+    position: relative;
+    top: 2.5%;
+    left: 5% ; 
+    width: 90%;
+    height: 90%;
+    padding: 10px 10px;
+    margin: 8px 0;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    -moz-text-align-last: left;
+         text-align-last: left;
+}
+.manda{
+    background-color: #FFD200;
+    color: white;
+}
+.tabella{
+    position: static;
+}
+.sinistra{
+    width: 32%;
+    height: 500px;
+    top: 70%;
+    position: absolute;
+    background-color: #1a3151;
+}
+.centro{
+    width: 32%;
+    height: 500px;
+    left: 33%;
+    top: 70%;
+    position: absolute;
+    background-color: lightgrey;
+}
+
+.gk{
+    position: absolute;
+    width: 25%;
+    color: orangered;
+}
+.df{
+    position: absolute;
+    width: 25%;
+    color: blue;
+    left: 25%;
+}
+.mf{
+    position: absolute;
+    width: 25%;
+    color: green;
+    left: 50%;
+}
+.st{
+    position: absolute;
+    width: 25%;
+    color: red;
+    left: 75%;
+}
+.destra{
+    width: 32%;
+    height: 500px;
+    left: 66%;
+    top: 70%;
+    position: absolute;
+    background-color: lightgrey;
+}
+.specchiettosito{
+    position: relative;
+    top: 5%;
+    left: 4%;
+    width: 90%;
+    height: 90%;
+}
+
+
+/*# sourceMappingURL=/GH_Conflicts_Test.9ad09f98.css.map */

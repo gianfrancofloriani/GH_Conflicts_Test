@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="index.css">
-        <!-- development version, includes helpful console warnings -->
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
     </head>
    <body onload="classifica()">
         <title>Raul's first site</title>
@@ -12,7 +11,7 @@
          
               <input type='image' class='arrow' src='up_button.png' alt='Hide table' onclick='hideshow(false)' border='0'/>
         
-              <table id='standing'style="width:99%"  >
+              <table id='standing'style="width:99%" class='tabella' >
                 <tr>
                     <th>Team</th>
                     <th>Points</th>
@@ -33,16 +32,72 @@
                   <input type="submit" id="simulazione" value="Submit" class="manda">
                 </form>
                </div>
-                          
-               
-               
+            
+               <div class="sinistra">
+                <iframe src="https://www.transfermarkt.com/" class="specchiettosito">
+                  <p>Your browser does not support iframes.</p>
+                </iframe>
+                </div>
+
                <div class="centro">
-                          <iframe src="https://www.transfermarkt.com/" class="specchiettosito">
-                            <p>Your browser does not support iframes.</p>
-                          </iframe>
-                          
+
+                <div class='gk'>
+                <label >Goalkeepers</label>
+                    <ul>
+                      <li><input type="checkbox"> Goalkeeper 1</li>
+                      <li><input type="checkbox"> Goalkeeper 2</li>
+                      <li><input type="checkbox"> Goalkeeper 3</li>
+                    </ul>
+                  </div>
+                <div class='df'>
+                <label >Defenders</label>
+                    <ul>
+                      <li><input type="checkbox"> Defender 1</li>
+                      <li><input type="checkbox"> Defender 2</li>
+                      <li><input type="checkbox"> Defender 3</li>
+                      <li><input type="checkbox"> Defender 4</li>
+                      <li><input type="checkbox"> Defender 5</li>
+                      <li><input type="checkbox"> Defender 6</li>
+                      <li><input type="checkbox"> Defender 7</li>
+                      <li><input type="checkbox"> Defender 8</li>
+                    </ul>
+                  </div>
+                <div class='mf'>  
+                <label >Midfielders</label>
+                    <ul>
+                      <li><input type="checkbox"> Midfielder 1</li>
+                      <li><input type="checkbox"> Midfielder 2</li>
+                      <li><input type="checkbox"> Midfielder 3</li>
+                      <li><input type="checkbox"> Midfielder 4</li>
+                      <li><input type="checkbox"> Midfielder 5</li>
+                      <li><input type="checkbox"> Midfielder 6</li>
+                      <li><input type="checkbox"> Midfielder 7</li>
+                      <li><input type="checkbox"> Midfielder 8</li>
+                    </ul>
+                  </div>
+                <div class='st'>
+                <label>Strikers</label>
+                    <ul>
+                      <li><input type="checkbox"> Striker 1</li>
+                      <li><input type="checkbox"> Striker 2</li>
+                      <li><input type="checkbox"> Striker 3</li>
+                      <li><input type="checkbox"> Striker 4</li>
+                      <li><input type="checkbox"> Striker 5</li>
+                      <li><input type="checkbox"> Striker 6</li>
+                    </ul>
+                  </div>
                </div>
 
+                <div class="destra">
+                <p>right container</p>
+                 </div>
+                
+               </div>
                <script src="index.js"></script>
-          </body>
+               <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+               <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>   
+               <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+               <!-- <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>  -->
+            
+           </body>
 </html>

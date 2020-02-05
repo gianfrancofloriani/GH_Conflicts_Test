@@ -26,7 +26,7 @@ td{
 }
 .scatola{ 
     visibility: visible;
-    position: absolute;
+    position: fixed;
     top: 10%;
     left: 33%;
     width: 500px;
@@ -51,27 +51,60 @@ td{
     border-radius: 4px;
     box-sizing: border-box;
     text-align-last: left;
-    
-  }
-  .manda{
+}
+.manda{
     background-color: #FFD200;
     color: white;
 }
-.radios {
-    color: purple;
-    height: auto;
+.tabella{
+    position: static;
 }
-
-.boxes {
-    color: rgb(29, 187, 50);
-    height: auto;
-}
-.centro{
-    width: 33%;
+.sinistra{
+    width: 32%;
     height: 500px;
-    top: 50%;
+    top: 70%;
     position: absolute;
     background-color: #1a3151;
+}
+.centro{
+    width: 32%;
+    height: 500px;
+    left: 33%;
+    top: 70%;
+    position: absolute;
+    background-color: lightgrey;
+}
+
+.gk{
+    position: absolute;
+    width: 25%;
+    color: orangered;
+}
+.df{
+    position: absolute;
+    width: 25%;
+    color: blue;
+    left: 25%;
+}
+.mf{
+    position: absolute;
+    width: 25%;
+    color: green;
+    left: 50%;
+}
+.st{
+    position: absolute;
+    width: 25%;
+    color: red;
+    left: 75%;
+}
+.destra{
+    width: 32%;
+    height: 500px;
+    left: 66%;
+    top: 70%;
+    position: absolute;
+    background-color: lightgrey;
 }
 .specchiettosito{
     position: relative;
