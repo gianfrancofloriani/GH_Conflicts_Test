@@ -1,0 +1,101 @@
+[{
+    "Name": "Szczesny",
+    "Role": "gk"
+},
+{
+    "Name": "Gollini",
+    "Role": "gk"
+},
+{
+    "Name": "Sportiello",
+    "Role": "gk"
+},
+{
+    "Name": "Bonucci",
+    "Role": "df"
+},
+{
+    "Name": "Toloi",
+    "Role": "df"
+},
+{
+    "Name": "Hateboer",
+    "Role": "df"
+},
+{
+    "Name": "Djimsiti",
+    "Role": "df"
+},
+{
+    "Name": "Smalling",
+    "Role": "df"
+},
+{
+    "Name": "Danilo",
+    "Role": "df"
+},
+{
+    "Name": "Kjaer",
+    "Role": "df"
+},
+{
+    "Name": "Caceres",
+    "Role": "df"
+},
+{
+    "Name": "Gomez",
+    "Role": "mf"
+},
+{
+    "Name": "Callejon",
+    "Role": "mf"
+},
+{
+    "Name": "Candreva",
+    "Role": "mf"
+},
+{
+    "Name": "Pellegrini",
+    "Role": "mf"
+},
+{
+    "Name": "Locatelli",
+    "Role": "mf"
+},
+{
+    "Name": "Bentancour",
+    "Role": "mf"
+},
+{
+    "Name": "Kluivert",
+    "Role": "mf"
+},
+{
+    "Name": "Malinovskyi",
+    "Role": "mf"
+},
+{
+    "Name": "Zapata",
+    "Role": "st"
+},
+{
+    "Name": "Milik",
+    "Role": "st"
+},
+{
+    "Name": "Cornelius",
+    "Role": "st"
+},
+{
+    "Name": "Caprari",
+    "Role": "st"
+},
+{
+    "Name": "Lapadula",
+    "Role": "st"
+},
+{
+    "Name": "Okaka",
+    "Role": "st"
+}
+]

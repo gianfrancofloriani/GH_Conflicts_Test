@@ -1,48 +1,49 @@
+//wrong JSON
 [{
     "Name": "Juventus",
-    "Points": 51,
+    "Points": 54,
     "Color1": "#FFFFFF",
     "Color2": "#050505"
 },
 {
     "Name": "Inter",
-    "Points": 47,
+    "Points": 51,
     "Color1": "#0175C0",
     "Color2": "#010203"
 },
 {
     "Name": "Lazio",
-    "Points": 45,
+    "Points": 50,
     "Color1": "#84D8FC",
     "Color2": "#DDDDDF"
 },
 {
     "Name": "Roma",
-    "Points": 38,
+    "Points": 39,
     "Color1": "#F5B922",
     "Color2": "#82142A"
 },
 {
     "Name": "Atalanta",
-    "Points": 35,
+    "Points": 39,
     "Color1": "#0060AD",
     "Color2": "#1D1D1B"
 },
 {
     "Name": "Cagliari",
-    "Points": 30,
+    "Points": 32,
     "Color1": "#9B1226",
     "Color2": "#0B294B"
 },
 {
     "Name": "Parma",
-    "Points": 28,
+    "Points": 32,
     "Color1": "#FFD200",
     "Color2": "#22378C"
 },
 {
     "Name": "Milan",
-    "Points": 28,
+    "Points": 32,
     "Color1": "#DE1311",
     "Color2": "#1C1317"
 },
@@ -54,25 +55,25 @@
 },
 {
     "Name": "Hellas Verona",
-    "Points": 26,
+    "Points": 31,
     "Color1": "#0850A1",
     "Color2": "#FEE42C"
 },
 {
     "Name": "Napoli",
-    "Points": 24,
+    "Points": 30,
     "Color1": "#2192CC",
     "Color2": "#FFFFFF"
 },
 {
     "Name": "Bologna",
-    "Points": 24,
+    "Points": 30,
     "Color1": "#002938",
     "Color2": "#B32133"
 },
 {
     "Name": "Fiorentina",
-    "Points": 24,
+    "Points": 25,
     "Color1": "#5D44A8",
     "Color2": "#FCFFFF"
 },
@@ -84,19 +85,19 @@
 },
 {
     "Name": "Sassuolo",
-    "Points": 22,
+    "Points": 26,
     "Color1": "#0AA152",
     "Color2": "#1D1E17"
 },
 {
     "Name": "Sampdoria",
-    "Points": 19,
+    "Points": 20,
     "Color1": "#0E1D99",
     "Color2": "#FFFDFF"
 },
 {
     "Name": "Lecce",
-    "Points": 16,
+    "Points": 19,
     "Color1": "#FDF201",
     "Color2": "#E91D23"
 },
@@ -114,7 +115,7 @@
 },
 {
     "Name": "Genoa",
-    "Points": 14,
+    "Points": 16,
     "Color1": "#AE1A11",
     "Color2": "#05232C"
 }
