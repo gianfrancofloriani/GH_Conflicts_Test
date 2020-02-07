@@ -1,5 +1,31 @@
 const form = document.querySelector('.maschera');
+class squadra {
+  constructor() {
+    this.team = "";
+    this.points=0;
+    this.color1="";
+    this.color2="";
+   }
+   setDatas(team,points,color1,color2)
+   {
+    this.team = team;
+    this.points= points;
+    this.color1= color1;
+    this.color2= color2;
+   }
 
+  }
+/*
+footballDB.collection('classifica').get().then((snapshot) => {
+  snapshot.docs.forEach(doc =>{
+    console.log(doc.data().squadra);
+    console.log(doc.data().punti);
+    //console.log(doc.data().created_at.toDate());
+  });
+  }).catch(err =>{
+ console.log(err);
+})
+*/
 //listener submit form di ingresso
 form.addEventListener('submit', e => {
   e.preventDefault();
@@ -18,10 +44,13 @@ form.addEventListener('submit', e => {
     alert('Hey '+nome+' '+cognome+' you are ok dude, have a good time on my site');
    } }) ;
 
-//funzuione che preleva squadre da file sorgente e crea tabella
+//funzione che preleva squadre da file sorgente e crea tabella
 const getTeams = async() => {
-const lettura = await fetch('http://localhost/RCTest/teams.json');
-const dati = await lettura.json();
+//const lettura = await fetch('http://localhost/RCTest/teams.json');
+//const dati = await lettura.json();
+
+let dati;
+
 dati.sort((a, b )=>{
   if(a.Points<b.Points){
       return 1;
@@ -32,6 +61,7 @@ dati.sort((a, b )=>{
     return -1;
   }
 })
+
 
 let tabella = document.getElementById('standing');
 const partenza = 1;
@@ -55,10 +85,44 @@ for(let i=(dati.length-1);i>=0;i--){
 return dati;
 }
 
+//funzione che preleva giocatori da file sorgente e compila lista
+const getPlayers = async() => {
+  const lettura = await fetch('http://localhost/RCTest/myteam.json');
+  const dati = await lettura.json();
+  let giocatori = document.getElementsByTagName('li');
+  let por=0;
+  let dif=3;
+  let cen=11;
+  let att=19;
+  for(let i=0;i<dati.length;i++){
+      switch (dati[i].Role){
+      case 'gk':
+        giocatori[por].innerText=dati[i].Name;
+      por++;
+      break;
+      case 'df':
+        giocatori[dif].innerText=dati[i].Name;
+        dif++;
+      break;
+      case 'mf':
+        giocatori[cen].innerText=dati[i].Name;
+        cen++;
+      break;
+      case 'st':
+        giocatori[att].innerText=dati[i].Name;
+        att++;
+      break;
+      default:
+        console.log('ERROR:Role mismatch');
+      break;
+    }
+    } 
+}
 //funzione principale caricata dal body
 function classifica() {
- getTeams();
- fillTeam();
+ downloadTables(); 
+// getTeams();
+//getPlayers();
 }
 
 //funzione mostra/nascondi classifica legata al pulsante freccia
@@ -86,35 +150,40 @@ function hideshow (show) {
    
   }
 }
-//funzione che riempie le liste nella form centrale il basso
-function fillTeam(){
-let rosa = [{Name:'Szczesny', Role:'gk'},{Name:'Gollini', Role:'gk'},{Name:'Sportiello', Role:'gk'},{Name:'Bonucci', Role:'df'},{Name:'Toloi', Role:'df'},{Name:'Hateboer', Role:'df'},{Name:'Djimsiti', Role:'df'},{Name:'Smalling', Role:'df'},{Name:'Danilo', Role:'df'},{Name:'Kjaer', Role:'df'},{Name:'Caceres', Role:'df'},{Name:'Gomez', Role:'mf'},{Name:'Callejon', Role:'mf'},{Name:'Candreva', Role:'mf'},{Name:'Pellegrini', Role:'mf'},{Name:'Locatelli', Role:'mf'},{Name:'Bentancour', Role:'mf'},{Name:'Kluivert', Role:'mf'},{Name:'Malinovskyi', Role:'mf'},{Name:'Zapata', Role:'st'},{Name:'Milik', Role:'st'},{Name:'Cornelius', Role:'st'},{Name:'Caprari', Role:'st'},{Name:'Lapadula', Role:'st'},{Name:'Okaka', Role:'st'}];
-let giocatori = document.getElementsByTagName('li');
-let por=0;
-let dif=3;
-let cen=11;
-let att=19;
- for(let i=0;i<rosa.length;i++){
-    switch (rosa[i].Role){
-     case 'gk':
-      giocatori[por].innerText=rosa[i].Name;
-     por++;
-     break;
-     case 'df':
-      giocatori[dif].innerText=rosa[i].Name;
-      dif++;
-     break;
-     case 'mf':
-      giocatori[cen].innerText=rosa[i].Name;
-      cen++;
-     break;
-     case 'st':
-      giocatori[att].innerText=rosa[i].Name;
-      att++;
-     break;
-     default:
-      console.log('ERROR:Role mismatch');
-     break;
+
+const downloadTables = async() => {
+  let dati = new squadra();
+  
+  footballDB.collection('classifica').get().then((snapshot) => {
+    for(let i=0; i < snapshot.docs.length;i++)
+    {
+     dati [i].setDatas(snapshot.docs[i].data().Name,snapshot.docs[i].data().Points,snapshot.docs[i].data().Color1,snapshot.docs[i].data().Color2);
+     
+  
    }
-  }  
+})
+console.log(dati);
+/*
+     for(let i=0; i < snapshot.docs.length;i++)
+    {
+     dati [i].setDatas(snapshot.docs[i].data().Name,snapshot.docs[i].data().Points,snapshot.docs[i].data().Color1,snapshot.docs[i].data().Color2);
+      =new squadra(snapshot.docs[i].data().Name,snapshot.docs[i].data().Points,snapshot.docs[i].data().Color1,snapshot.docs[i].data().Color2);
+  
+   }
+    
+      
+    a.push({
+    Name : (doc.data().Name),
+    Points : (doc.data().Points),
+    Color1 : (doc.data().Color1),
+    Color2 : (doc.data().Color2),
+     })
+     let a=new squadra(doc.data().Name,doc.data().Points,doc.data().Color1,doc.data().Color2);
+     console.log(a);
+     dati.push(a);
+  });
+  }).catch(err =>{
+ console.log(err);
+})*/
+
 }

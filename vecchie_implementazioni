@@ -1,0 +1,30 @@
+/*Con questo metodo chiamavo le due istanze*/
+creaDatabase();
+
+/*Con questo metodo riempio la tabella delle squadre del DB con i dati presenti nel JSON*/
+const creaDatabase = async () => {
+  const lettura = await fetch('http://localhost/RCTest/teams.json');
+  const dati = await lettura.json();
+  console.log(dati);
+  for(let i=0; i<20; i++){
+  footballDB.collection('classifica').add(dati[i]).then(()=>{
+    console.log('Squadra aggiunta');
+   }).catch(err => {
+      console.log(err);
+   });
+  }
+ }
+
+/*Con questo metodo riempio la tabella dei giocatori del DB con i dati presenti nel JSON*/
+ const creaDatabase = async () => {
+  const lettura = await fetch('http://localhost/RCTest/myteam.json');
+  const dati = await lettura.json();
+  console.log(dati);
+  for(let i=0; i<25; i++){
+  footballDB.collection('rosa').add(dati[i]).then(()=>{
+    console.log('Giocatore aggiunto');
+   }).catch(err => {
+      console.log(err);
+   });
+  }
+ }
