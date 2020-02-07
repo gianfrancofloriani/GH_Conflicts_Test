@@ -21,8 +21,8 @@ td{
     height: 20px;
     width: 20px;
     position: absolute;
-    top: 20px;
-    left: 200px;
+    top: 10px;
+    left: 250px;
 }
 .scatola{ 
     visibility: visible;
@@ -62,16 +62,16 @@ td{
 .sinistra{
     width: 32%;
     height: 500px;
-    top: 70%;
     position: absolute;
+    bottom: -90%;
     background-color: #1a3151;
 }
 .centro{
     width: 32%;
     height: 500px;
     left: 33%;
-    top: 70%;
     position: absolute;
+    bottom: -90%;
     background-color: lightgrey;
 }
 
@@ -102,8 +102,8 @@ td{
     width: 32%;
     height: 500px;
     left: 66%;
-    top: 70%;
     position: absolute;
+    bottom: -90%;
     background-color: lightgrey;
 }
 .specchiettosito{

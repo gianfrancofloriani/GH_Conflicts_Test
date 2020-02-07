@@ -28,3 +28,29 @@ const creaDatabase = async () => {
    });
   }
  }
+
+
+
+/*Vecchia implementazione lettura dati da JSON*/
+//const lettura = await fetch('http://localhost/RCTest/teams.json');
+//const dati = await lettura.json();
+
+
+ //const lettura = await fetch('http://localhost/RCTest/myteam.json');
+ //const dati = await lettura.json();
+
+
+/* Vecchia implementazione gradiente */
+  let creaGradiente = document.getElementsByTagName('tr');
+  creaGradiente[0].style.backgroundColor='#13273c';
+  creaGradiente[0].style.color= 'white';
+  for(let i=1;i<=20;i++){
+    creaGradiente[i].style.backgroundImage= 'linear-gradient(to right,'+dati[i-1].Color1+','+dati[i-1].Color2+')';
+    creaGradiente[i].style.color= 'black';
+    creaGradiente[i].style.fontWeight= 'bold';
+  }  
+return dati;*/
+
+
+
+
