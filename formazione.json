@@ -1,0 +1,47 @@
+[{
+    "Name": "Szczesny",
+    "Role": "gk"
+},
+{
+    "Name": "Bonucci",
+    "Role": "df"
+},
+{
+    "Name": "Toloi",
+    "Role": "df"
+},
+{
+    "Name": "Hateboer",
+    "Role": "df"
+},
+{
+    "Name": "Gomez",
+    "Role": "mf"
+},
+{
+    "Name": "Callejon",
+    "Role": "mf"
+},
+
+{
+    "Name": "Pellegrini",
+    "Role": "mf"
+},
+{
+    "Name": "Bentancour",
+    "Role": "mf"
+},
+
+{
+    "Name": "Zapata",
+    "Role": "st"
+},
+{
+    "Name": "Milik",
+    "Role": "st"
+},
+{
+    "Name": "Cornelius",
+    "Role": "st"
+}
+]

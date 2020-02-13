@@ -18,7 +18,7 @@ form.addEventListener('submit', e => {
     alert('Hey '+nome+' '+cognome+' you are ok dude, have a good time on my site');
    } }) ;
 
-//funzione che preleva squadre da file sorgente, crea tabella e relativi sfondi-gradiente
+//funzione che preleva squadre da DB, riempie tabella e disegna sfondi-gradiente
 const getTeams = async() => {
   let riempiTabella = document.getElementsByTagName('td');
   let i=0;
@@ -38,7 +38,7 @@ const getTeams = async() => {
 
 }
 
-//funzione che preleva giocatori da file sorgente e compila lista
+//funzione che preleva giocatori da DB e compila lista
 const getPlayers = async() => {
   let giocatori = document.getElementsByTagName('li');
   let por=0;
@@ -50,19 +50,19 @@ const getPlayers = async() => {
 
       switch (doc.data().Role){
         case 'gk':
-          giocatori[por].innerText=doc.data().Name;
+          giocatori[por].innerHTML=`<input type="checkbox"> ${doc.data().Name}`;
         por++;
         break;
         case 'df':
-          giocatori[dif].innerText=doc.data().Name;
+          giocatori[dif].innerHTML=`<input type="checkbox"> ${doc.data().Name}`;
           dif++;
         break;
         case 'mf':
-          giocatori[cen].innerText=doc.data().Name;
+          giocatori[cen].innerHTML=`<input type="checkbox"> ${doc.data().Name}`;
           cen++;
         break;
         case 'st':
-          giocatori[att].innerText=doc.data().Name;
+          giocatori[att].innerHTML=`<input type="checkbox"> ${doc.data().Name}`;
           att++;
         break;
         default:
@@ -104,5 +104,52 @@ function hideshow (show) {
   cambio.setAttribute('alt','hide table');
   cambio.setAttribute('onclick','hideshow(false)');
    
+  }
+}
+
+function showRoles(role){
+  const gk = document.querySelector('.gk');
+  const df = document.querySelector('.df');
+  const mf = document.querySelector('.mf');
+  const st = document.querySelector('.st');
+  
+  switch(role){
+    case 'gk':
+
+      if(gk.classList.contains('d-none')){
+        gk.classList.remove('d-none');
+      }
+      
+      df.classList.add('d-none');
+      mf.classList.add('d-none');
+      st.classList.add('d-none');
+      break;
+   case 'df':
+
+    if(df.classList.contains('d-none')){
+      df.classList.remove('d-none');
+    }
+      gk.classList.add('d-none');
+      mf.classList.add('d-none');
+      st.classList.add('d-none');
+      break;
+   case 'mf':
+    if(mf.classList.contains('d-none')){
+      mf.classList.remove('d-none');
+    }
+    gk.classList.add('d-none');
+    df.classList.add('d-none');
+    st.classList.add('d-none');
+      break;
+   case 'st':
+    if(st.classList.contains('d-none')){
+      st.classList.remove('d-none');
+    }
+    gk.classList.add('d-none');
+    df.classList.add('d-none');
+    mf.classList.add('d-none');
+        break;
+   default:
+     console.log('errore, role mismatch');
   }
 }

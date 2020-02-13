@@ -118,8 +118,12 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"index.js":[function(require,module,exports) {
-//import { format } from 'date-fns';
-var form = document.querySelector('.maschera');
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+var form = document.querySelector('.maschera'); //listener submit form di ingresso
+
 form.addEventListener('submit', function (e) {
   e.preventDefault();
   var nome = form.firstname.value;
@@ -136,144 +140,115 @@ form.addEventListener('submit', function (e) {
     corpo.classList.add('showbody');
     alert('Hey ' + nome + ' ' + cognome + ' you are ok dude, have a good time on my site');
   }
-});
+}); //funzione che preleva squadre da file sorgente, crea tabella e relativi sfondi-gradiente
+
+var getTeams =
+/*#__PURE__*/
+function () {
+  var _ref = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee() {
+    var riempiTabella, i;
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            riempiTabella = document.getElementsByTagName('td');
+            i = 0;
+            footballDB.collection('classifica').orderBy('Points', 'desc').get().then(function (snapshot) {
+              snapshot.docs.forEach(function (doc) {
+                riempiTabella[i].innerText = doc.data().Name;
+                riempiTabella[i + 1].innerText = doc.data().Points;
+                riempiTabella[i].parentElement.style.backgroundImage = 'linear-gradient(to right,' + doc.data().Color1 + ',' + doc.data().Color2 + ')';
+                riempiTabella[i].parentElement.style.color = 'black';
+                riempiTabella[i].parentElement.style.fontWeight = 'bold';
+                i += 3;
+              });
+            }).catch(function (err) {
+              console.log(err);
+            });
+
+          case 3:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+
+  return function getTeams() {
+    return _ref.apply(this, arguments);
+  };
+}(); //funzione che preleva giocatori da file sorgente e compila lista
+
+
+var getPlayers =
+/*#__PURE__*/
+function () {
+  var _ref2 = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee2() {
+    var giocatori, por, dif, cen, att;
+    return regeneratorRuntime.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            giocatori = document.getElementsByTagName('li');
+            por = 0;
+            dif = 3;
+            cen = 11;
+            att = 19;
+            footballDB.collection('rosa').get().then(function (snapshot) {
+              snapshot.docs.forEach(function (doc) {
+                switch (doc.data().Role) {
+                  case 'gk':
+                    giocatori[por].innerHTML = "<input type=\"checkbox\"> ".concat(doc.data().Name);
+                    por++;
+                    break;
+
+                  case 'df':
+                    giocatori[dif].innerHTML = "<input type=\"checkbox\"> ".concat(doc.data().Name);
+                    dif++;
+                    break;
+
+                  case 'mf':
+                    giocatori[cen].innerHTML = "<input type=\"checkbox\"> ".concat(doc.data().Name);
+                    cen++;
+                    break;
+
+                  case 'st':
+                    giocatori[att].innerHTML = "<input type=\"checkbox\"> ".concat(doc.data().Name);
+                    att++;
+                    break;
+
+                  default:
+                    console.log('ERROR:Role mismatch');
+                    break;
+                }
+              });
+            }).catch(function (err) {
+              console.log(err);
+            });
+
+          case 6:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2);
+  }));
+
+  return function getPlayers() {
+    return _ref2.apply(this, arguments);
+  };
+}(); //funzione principale caricata dal body
+
 
 function classifica() {
-  var seriea = [{
-    Name: 'Juventus',
-    Points: 51,
-    Color1: '#FFFFFF',
-    Color2: '#050505'
-  }, {
-    Name: 'Inter',
-    Points: 47,
-    Color1: '#0175C0',
-    Color2: '#010203'
-  }, {
-    Name: 'Lazio',
-    Points: 45,
-    Color1: '#84D8FC',
-    Color2: '#DDDDDF'
-  }, {
-    Name: 'Roma',
-    Points: 38,
-    Color1: '#F5B922',
-    Color2: '#82142A'
-  }, {
-    Name: 'Atalanta',
-    Points: 35,
-    Color1: '#0060AD',
-    Color2: '#1D1D1B'
-  }, {
-    Name: 'Cagliari',
-    Points: 30,
-    Color1: '#9B1226',
-    Color2: '#0B294B'
-  }, {
-    Name: 'Parma',
-    Points: 28,
-    Color1: '#FFD200',
-    Color2: '#22378C'
-  }, {
-    Name: 'Milan',
-    Points: 28,
-    Color1: '#DE1311',
-    Color2: '#1C1317'
-  }, {
-    Name: 'Torino',
-    Points: 27,
-    Color1: '#8A1E03',
-    Color2: '#FEFFF8'
-  }, {
-    Name: 'Hellas Verona',
-    Points: 26,
-    Color1: '#0850A1',
-    Color2: '#FEE42C'
-  }, {
-    Name: 'Napoli',
-    Points: 24,
-    Color1: '#2192CC',
-    Color2: '#FFFFFF'
-  }, {
-    Name: 'Bologna',
-    Points: 24,
-    Color1: '#002938',
-    Color2: '#B32133'
-  }, {
-    Name: 'Fiorentina',
-    Points: 24,
-    Color1: '#5D44A8',
-    Color2: '#FCFFFF'
-  }, {
-    Name: 'Udinese',
-    Points: 24,
-    Color1: '#FEFFFF',
-    Color2: '#2E2B20'
-  }, {
-    Name: 'Sassuolo',
-    Points: 22,
-    Color1: '#0AA152',
-    Color2: '#1D1E17'
-  }, {
-    Name: 'Sampdoria',
-    Points: 19,
-    Color1: '#0E1D99',
-    Color2: '#FFFDFF'
-  }, {
-    Name: 'Lecce',
-    Points: 16,
-    Color1: '	#FDF201',
-    Color2: '#E91D23'
-  }, {
-    Name: 'Spal',
-    Points: 15,
-    Color1: '#01A0F3',
-    Color2: '#FCFDF2'
-  }, {
-    Name: 'Brescia',
-    Points: 15,
-    Color1: '#025BA6',
-    Color2: '#FCFCFC'
-  }, {
-    Name: 'Genoa',
-    Points: 14,
-    Color1: '#AE1A11',
-    Color2: '#05232C'
-  }];
-  seriea.sort(function (a, b) {
-    if (a.Points < b.Points) {
-      return 1;
-    } else if (a.Name > b.Name) {
-      return 1;
-    } else {
-      return -1;
-    }
-  });
-  var tabella = document.getElementById('standing');
-  var partenza = 1;
+  getTeams();
+  getPlayers();
+} //funzione mostra/nascondi classifica legata al pulsante freccia
 
-  for (var i = seriea.length - 1; i >= 0; i--) {
-    var riga = tabella.insertRow(partenza);
-    var nomeSquadra = riga.insertCell(0);
-    var numeroPunti = riga.insertCell(1);
-    var numeroPosizione = riga.insertCell(2);
-    nomeSquadra.innerText = seriea[i].Name;
-    numeroPunti.innerText = seriea[i].Points;
-    numeroPosizione.innerText = partenza + i;
-  }
-
-  var creaGradiente = document.getElementsByTagName('tr');
-  creaGradiente[0].style.backgroundColor = '#13273c';
-  creaGradiente[0].style.color = 'white';
-
-  for (var _i = 1; _i <= 20; _i++) {
-    creaGradiente[_i].style.backgroundImage = 'linear-gradient(to right,' + seriea[_i - 1].Color1 + ',' + seriea[_i - 1].Color2 + ')';
-    creaGradiente[_i].style.color = 'black';
-    creaGradiente[_i].style.fontWeight = 'bold';
-  }
-
-  fillTeam();
-}
 
 function hideshow(show) {
   var righeTabella = document.getElementsByTagName('tr');
@@ -289,8 +264,8 @@ function hideshow(show) {
     cambio.setAttribute('alt', 'show table');
     cambio.setAttribute('onclick', 'hideshow(true)');
   } else {
-    for (var _i2 = start; _i2 < righeTabella.length; _i2++) {
-      righeTabella[_i2].classList.remove('tr-hidden');
+    for (var _i = start; _i < righeTabella.length; _i++) {
+      righeTabella[_i].classList.remove('tr-hidden');
     }
 
     cambio.setAttribute('src', 'up_button.png');
@@ -299,121 +274,56 @@ function hideshow(show) {
   }
 }
 
-function fillTeam() {
-  var rosa = [{
-    Name: 'Szczesny',
-    Role: 'gk'
-  }, {
-    Name: 'Gollini',
-    Role: 'gk'
-  }, {
-    Name: 'Sportiello',
-    Role: 'gk'
-  }, {
-    Name: 'Bonucci',
-    Role: 'df'
-  }, {
-    Name: 'Toloi',
-    Role: 'df'
-  }, {
-    Name: 'Hateboer',
-    Role: 'df'
-  }, {
-    Name: 'Djimsiti',
-    Role: 'df'
-  }, {
-    Name: 'Smalling',
-    Role: 'df'
-  }, {
-    Name: 'Danilo',
-    Role: 'df'
-  }, {
-    Name: 'Kjaer',
-    Role: 'df'
-  }, {
-    Name: 'Caceres',
-    Role: 'df'
-  }, {
-    Name: 'Gomez',
-    Role: 'mf'
-  }, {
-    Name: 'Callejon',
-    Role: 'mf'
-  }, {
-    Name: 'Candreva',
-    Role: 'mf'
-  }, {
-    Name: 'Pellegrini',
-    Role: 'mf'
-  }, {
-    Name: 'Locatelli',
-    Role: 'mf'
-  }, {
-    Name: 'Bentancour',
-    Role: 'mf'
-  }, {
-    Name: 'Kluivert',
-    Role: 'mf'
-  }, {
-    Name: 'Malinovskyi',
-    Role: 'mf'
-  }, {
-    Name: 'Zapata',
-    Role: 'st'
-  }, {
-    Name: 'Milik',
-    Role: 'st'
-  }, {
-    Name: 'Cornelius',
-    Role: 'st'
-  }, {
-    Name: 'Caprari',
-    Role: 'st'
-  }, {
-    Name: 'Lapadula',
-    Role: 'st'
-  }, {
-    Name: 'Okaka',
-    Role: 'st'
-  }];
-  var giocatori = document.getElementsByTagName('li');
-  var por = 0;
-  var dif = 3;
-  var cen = 11;
-  var att = 19;
+function showRoles(role) {
+  var gk = document.querySelector('.gk');
+  var df = document.querySelector('.df');
+  var mf = document.querySelector('.mf');
+  var st = document.querySelector('.st');
 
-  for (var i = 0; i < rosa.length; i++) {
-    switch (rosa[i].Role) {
-      case 'gk':
-        giocatori[por].innerText = rosa[i].Name;
-        por++;
-        break;
+  switch (role) {
+    case 'gk':
+      if (gk.classList.contains('d-none')) {
+        gk.classList.remove('d-none');
+      }
 
-      case 'df':
-        giocatori[dif].innerText = rosa[i].Name;
-        dif++;
-        break;
+      df.classList.add('d-none');
+      mf.classList.add('d-none');
+      st.classList.add('d-none');
+      break;
 
-      case 'mf':
-        giocatori[cen].innerText = rosa[i].Name;
-        cen++;
-        break;
+    case 'df':
+      if (df.classList.contains('d-none')) {
+        df.classList.remove('d-none');
+      }
 
-      case 'st':
-        giocatori[att].innerText = rosa[i].Name;
-        att++;
-        break;
+      gk.classList.add('d-none');
+      mf.classList.add('d-none');
+      st.classList.add('d-none');
+      break;
 
-      default:
-        console.log('ERROR:Role mismatch');
-        break;
-    }
+    case 'mf':
+      if (mf.classList.contains('d-none')) {
+        mf.classList.remove('d-none');
+      }
+
+      gk.classList.add('d-none');
+      df.classList.add('d-none');
+      st.classList.add('d-none');
+      break;
+
+    case 'st':
+      if (st.classList.contains('d-none')) {
+        st.classList.remove('d-none');
+      }
+
+      gk.classList.add('d-none');
+      df.classList.add('d-none');
+      mf.classList.add('d-none');
+      break;
+
+    default:
+      console.log('errore, role mismatch');
   }
-
-  var prova = new Date(); //  let prova2= format(prova,'YYYY');
-
-  console.log(prova); //  console.log(prova2);
-  //console.log(dateFns.format(prova,'YYYY'));
 }
 },{}],"../../Users/Raul Cangemi/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -443,7 +353,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65128" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54496" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

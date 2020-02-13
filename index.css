@@ -14,15 +14,16 @@ table{
     border: 1px solid black;
     text-align: left;
 }
+th{
+    background-color: white;
+}
 td{
     text-align: center;
 }
 .arrow{
     height: 20px;
     width: 20px;
-    position: absolute;
-    top: 10px;
-    left: 250px;
+    background-color: white;
 }
 .scatola{ 
     visibility: visible;
@@ -56,54 +57,40 @@ td{
     background-color: #FFD200;
     color: white;
 }
-.tabella{
-    position: static;
-}
+
 .sinistra{
-    width: 32%;
-    height: 500px;
-    position: absolute;
-    bottom: -90%;
+    height: 350px;
     background-color: #1a3151;
 }
 .centro{
-    width: 32%;
-    height: 500px;
-    left: 33%;
-    position: absolute;
-    bottom: -90%;
-    background-color: lightgrey;
+    height: 350px;
+    background-color: white;
+    
 }
 
 .gk{
-    position: absolute;
-    width: 25%;
+   
     color: orangered;
+    font-size: 1em;
 }
 .df{
-    position: absolute;
-    width: 25%;
+    
     color: blue;
     left: 25%;
+    font-size: 1em;
 }
 .mf{
-    position: absolute;
-    width: 25%;
+    
     color: green;
-    left: 50%;
+    font-size: 1em;
 }
 .st{
-    position: absolute;
-    width: 25%;
+    
     color: red;
-    left: 75%;
+    font-size: 1em;
 }
 .destra{
-    width: 32%;
-    height: 500px;
-    left: 66%;
-    position: absolute;
-    bottom: -90%;
+    height: 350px;
     background-color: lightgrey;
 }
 .specchiettosito{

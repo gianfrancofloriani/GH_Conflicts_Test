@@ -2,16 +2,21 @@
 <html>
     <head>
         <!-- Bootstrap -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="index.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="index.css">
     </head>
    <body onload="classifica()">
         <title>Raul's first site</title>
-        <p>Raul Cangemi's practise page</p>
-         
-              <input type='image' class='arrow' src='up_button.png' alt='Hide table' onclick='hideshow(false)' border='0'/>
         
-              <table id='standing'style="width:99%" class='tabella' >
+        <div class='jumbotron jumbotron-fluid bg-info text-white'>
+          <div class='container'>
+          <h1 class='display-4'>Raul Cangemi's practise page</h1>
+          <input type='image' class='arrow' src='up_button.png' alt='Hide table' onclick='hideshow(false)' border='0'/>
+          </div>
+        </div>
+       
+        <div class='row justify-content-center'>
+            <table id='standing'style="width:99%" class='tabella col-md-10 ' >
                 <tr>
                     <th>Team</th>
                     <th>Points</th>
@@ -118,7 +123,7 @@
                   <td>20</td>
                 </tr>
              </table>
-       
+            </div>
 
               <div id='popup' class="scatola">
                 <form action="index.html" class="maschera" id="anagrafica">
@@ -132,68 +137,115 @@
                   <input type="submit" id="simulazione" value="Submit" class="manda">
                 </form>
                </div>
-            
-               <div class="sinistra">
-                 <!--
-                <iframe src="https://www.transfermarkt.com/" class="specchiettosito" >-->
-                  <p>Your browser does not support iframes.</p>
-                </iframe>
-                </div>
+               
+               <div class='row justify-content-center'>
+                    <div class="sinistra col-md-3">
+                   <!-- <iframe src="https://www.transfermarkt.com/" class="specchiettosito" >-->
+                        <p>Your browser does not support iframes.</p>
+                      </iframe>
+                      </div>
 
-               <div class="centro">
+                    <div class="centro col-md-3">
 
-                <div class='gk'>
-                <label >Goalkeepers</label>
-                    <ul>
-                      <li><input type="checkbox"> Goalkeeper 1</li>
-                      <li><input type="checkbox"> Goalkeeper 2</li>
-                      <li><input type="checkbox"> Goalkeeper 3</li>
-                    </ul>
-                  </div>
-                <div class='df'>
-                <label >Defenders</label>
-                    <ul>
-                      <li><input type="checkbox"> Defender 1</li>
-                      <li><input type="checkbox"> Defender 2</li>
-                      <li><input type="checkbox"> Defender 3</li>
-                      <li><input type="checkbox"> Defender 4</li>
-                      <li><input type="checkbox"> Defender 5</li>
-                      <li><input type="checkbox"> Defender 6</li>
-                      <li><input type="checkbox"> Defender 7</li>
-                      <li><input type="checkbox"> Defender 8</li>
-                    </ul>
-                  </div>
-                <div class='mf'>  
-                <label >Midfielders</label>
-                    <ul>
-                      <li><input type="checkbox"> Midfielder 1</li>
-                      <li><input type="checkbox"> Midfielder 2</li>
-                      <li><input type="checkbox"> Midfielder 3</li>
-                      <li><input type="checkbox"> Midfielder 4</li>
-                      <li><input type="checkbox"> Midfielder 5</li>
-                      <li><input type="checkbox"> Midfielder 6</li>
-                      <li><input type="checkbox"> Midfielder 7</li>
-                      <li><input type="checkbox"> Midfielder 8</li>
-                    </ul>
-                  </div>
-                <div class='st'>
-                <label>Strikers</label>
-                    <ul>
-                      <li><input type="checkbox"> Striker 1</li>
-                      <li><input type="checkbox"> Striker 2</li>
-                      <li><input type="checkbox"> Striker 3</li>
-                      <li><input type="checkbox"> Striker 4</li>
-                      <li><input type="checkbox"> Striker 5</li>
-                      <li><input type="checkbox"> Striker 6</li>
-                    </ul>
-                  </div>
-               </div>
+                        
+                        <div class="row d-flex justify-content-center">
+                          <button type="button" class="btn btn-primary flex-fill" onclick="showRoles('gk')">Goalkeepers</button>
+                          <button type="button" class="btn btn-primary flex-fill" onclick="showRoles('df')">Defenders</button>
+                          <button type="button" class="btn btn-primary flex-fill" onclick="showRoles('mf')">Midfielders</button>
+                          <button type="button" class="btn btn-primary flex-fill" onclick="showRoles('st')">Strikers</button>
+                          
 
-                <div class="destra">
-                <p>right container</p>
-                 </div>
-                
-               </div>
+                        </div>
+                        <div class='container d-flex h-75 justify-content-center'>
+                                <div class='row align-self-center'>
+                                                  <div class='gk '>
+                                                  
+                                                    <div class='card border-primary'>
+                                                      <div class='card-body'>
+                                                        <ul>
+                                                            <li> Goalkeeper 1</li>
+                                                            <li> Goalkeeper 2</li>
+                                                            <li> Goalkeeper 3</li>
+                                                        </ul>
+                                                      </div>
+                                                    </div>
+                                                    </div>
+
+                                                    <div class='df d-none'>
+                                                    
+                                                    <div class='card border-primary'>
+                                                      <div class='card-body'>
+                                                          <ul>
+                                                              <li> Defender 1</li>
+                                                              <li> Defender 2</li>
+                                                              <li> Defender 3</li>
+                                                              <li> Defender 4</li>
+                                                              <li> Defender 5</li>
+                                                              <li> Defender 6</li>
+                                                              <li> Defender 7</li>
+                                                              <li> Defender 8</li>
+                                                          </ul>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+
+                                                    <div class='mf d-none'>  
+                                                  
+                                                    <div class='card border-primary'>
+                                                      <div class='card-body'>
+                                                          <ul>
+                                                              <li> Midfielder 1</li>
+                                                              <li> Midfielder 2</li>
+                                                              <li Midfielder 3</li>
+                                                              <li Midfielder 4</li>
+                                                              <li Midfielder 5</li>
+                                                              <li Midfielder 6</li>
+                                                              <li Midfielder 7</li>
+                                                              <li Midfielder 8</li>
+                                                          </ul>
+                                                      </div>
+                                                    </div>
+
+                                                    </div>
+
+                                                    <div class='st d-none'>
+                                                    
+                                                    <div class='card border-primary'>
+                                                      <div class='card-body'>
+                                                          <ul>
+                                                              <li> Striker 1</li>
+                                                              <li> Striker 2</li>
+                                                              <li> Striker 3</li>
+                                                              <li> Striker 4</li>
+                                                              <li> Striker 5</li>
+                                                              <li> Striker 6</li>
+                                                          </ul>
+                                                        </div>
+                                                      </div>
+                                        </div>
+                             </div>
+                        </div>
+                    </div>
+
+                   <div class="destra col-md-3">
+                        <div  class='card'>
+                            <div class='card body'>
+                              <p>Goalkeeper</p>
+                              <p>Defender 1</p>
+                              <p>Defender 2</p>
+                              <p>Defender 3</p>
+                              <p>Midfielder 1</p>
+                              <p>Midfielder 2</p>
+                              <p>Midfielder 3</p>
+                              <p>Midfielder 4</p>
+                              <p>Striker 1</p>
+                              <p>Striker 2</p>
+                              <p>Striker 3</p>
+                            </div>
+                         </div>
+                   </div>
+           </div>
+       </div>
                <!-- The core Firebase JS SDK is always required and must be listed first -->
                 <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
                 <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-firestore.js"></script>

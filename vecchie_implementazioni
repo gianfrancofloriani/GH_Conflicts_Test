@@ -29,6 +29,21 @@ const creaDatabase = async () => {
   }
  }
 
+/*Con questo metodo riempio la tabella della rosa del DB con i dati presenti nel JSON*/
+const creaFormazione = async () => {
+  const lettura = await fetch('http://localhost/RCTest/formazione.json');
+  const dati = await lettura.json();
+  console.log(dati);
+  for(let i=0; i<11; i++){
+  footballDB.collection('formazione').add(dati[i]).then(()=>{
+    console.log('Squadra aggiunta');
+   }).catch(err => {
+      console.log(err);
+   });
+  }
+ }
+
+ creaFormazione();
 
 
 /*Vecchia implementazione lettura dati da JSON*/
